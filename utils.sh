@@ -1,11 +1,11 @@
 
 # utils modules
 info() {
-	echo "[INFO] $1"
+	echo "[INFO] $@"
 }
 
 fatal() {
-	echo "[FATAL] $1"
+	echo "[FATAL] $@"
 	exit 1
 }
 
@@ -15,8 +15,11 @@ help(){
    	echo "Log Management shell script"
 	echo "Usage: $0 {gen|rotate|clean}"
 	echo "	gen  : generate log into the file"
-	echo "	rotate : rename file name if number of lines are over the threshold "	
+    echo "  ex: gen [filename] [lines]"
+	echo "	rotate : rename file name if number of lines are over the threshold"
+    echo "  ex: rotate [file-name] [threshold]"	
 	echo "	clean  : remove the logs"
+    echo "  ex: clean [directory] [threshold]"
 	echo ""
 }
 
